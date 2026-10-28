@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #202642;
+    color: #f7f1fa;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background: linear-gradient(135deg, #342447, #713f75);
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 6%;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav h2 {
+    font-size: 22px;
+    color: #ffb5b0;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #ffb5b0;
+}
+
+/* Portada */
+.portada {
+    padding: 75px 8%;
+    text-align: center;
+    background: linear-gradient(135deg, #202642, #34385e);
+}
+
+.portada h1 {
+    font-size: clamp(32px, 5vw, 55px);
+    margin: 15px 0;
+    color: #ffb5b0;
+}
+
+.portada p {
+    margin-bottom: 12px;
+    color: #f0eaf7;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ff8c82;
+    color: #30213b;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.boton:hover {
+    transform: scale(1.08);
+    background: #ffc0b9;
+}
+
+/* Introducción */
+.introduccion,
+.cierre {
+    max-width: 850px;
+    margin: auto;
+    padding: 50px 6%;
+    text-align: center;
+}
+
+h2 {
+    color: #ffb5b0;
+    margin-bottom: 15px;
+}
+
+/* Galería */
+.galeria {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.foto {
+    background: #f2ddf3;
+    color: #30213b;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #090d1c70;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+/* Transición de cada tarjeta */
+.foto:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px #090d1c99;
+}
+
+/* Transición de imágenes */
+.foto img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s, filter 0.5s;
+}
+
+.foto:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.08) saturate(1.15);
+}
+
+.foto h3 {
+    padding: 12px 14px 4px;
+    font-size: 17px;
+    color: #713f75;
+}
+
+.foto p {
+    padding: 0 14px 17px;
+    font-size: 14px;
+    color: #51445c;
+}
+
+/* Fotos de la solución */
+.solucion {
+    border-bottom: 4px solid #ff8c82;
+}
+
+/* Conclusión */
+.cierre {
+    padding-bottom: 65px;
+}
+
+/* Pie de página */
+footer {
+    background: #342447;
+    color: #ffb5b0;
+    text-align: center;
+    padding: 22px;
+}
+
+/* Adaptación a tabletas */
+@media (max-width: 900px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .foto h3 {
+        font-size: 15px;
+    }
+
+    .foto p {
+        font-size: 13px;
+    }
+
+    .portada {
+        padding: 55px 6%;
+    }
+}
+
+@media (max-width: 360px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
